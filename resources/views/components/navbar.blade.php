@@ -7,8 +7,9 @@
         <div class="flex space-x-6 justify-center items-center">
             <a href="{{ url('/') }}" class="text-xl font-bold text-red-200 hover:text-red-400">Home</a>
             <a href="{{ url('/about') }}" class="text-xl font-bold text-red-200 hover:text-red-400">About</a>
-            <a href="{{ url('/blog-detail') }}" class="text-xl font-bold text-red-200 hover:text-red-400">Blogs</a>
-            <a href="{{ url('/add/blog') }}" class="text-xl font-medium px-4 py-2 bg-red-200 text-red-950 rounded-lg hover:text-red-400">Create Blog</a>
+            <a href="{{ url('/add/blog') }}"
+                class="text-xl font-medium px-4 py-2 bg-red-200 text-red-950 rounded-lg hover:text-red-400">Create
+                Blog</a>
         </div>
 
         <!-- Auth Buttons -->
@@ -17,13 +18,15 @@
                 <!-- Profile Dropdown -->
                 <div class="relative group flex justify-center items-center">
                     <button class="text-red-200 font-medium border border-red-200 rounded-3xl p-2">
-                        {{ Auth::user()->username }} 
+                        {{ Auth::user()->username }}
                     </button>
                     <div class="absolute top-8 hidden group-hover:block bg-white shadow-md rounded-lg mt-2 py-2 w-32 z-50">
-                        <a href="{{ url('/profile') }}" class="block px-4 py-2 text-sm text-red-950 hover:bg-red-200">Profile</a>
+                        <a href="{{ route('profile') }}"
+                            class="block px-4 py-2 text-sm text-red-950 hover:bg-red-200">Profile</a>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <button type="submit" class="block w-full text-left px-4 py-2 text-sm text-red-950 hover:bg-red-200">
+                            <button type="submit"
+                                class="block w-full text-left px-4 py-2 text-sm text-red-950 hover:bg-red-200">
                                 Logout
                             </button>
                         </form>
@@ -32,8 +35,10 @@
             @endauth
 
             @guest
-                <a href="{{ url('/login') }}" class="px-4 py-2 bg-red-200 text-red-950 rounded-lg hover:text-red-400">Login</a>
-                <a href="{{ url('/register') }}" class="px-4 py-2 border border-red-200 text-red-200 rounded-lg hover:bg-red-200 hover:text-red-950">Register</a>
+                <a href="{{ url('/login') }}"
+                    class="px-4 py-2 bg-red-200 text-red-950 rounded-lg hover:text-red-400">Login</a>
+                <a href="{{ url('/register') }}"
+                    class="px-4 py-2 border border-red-200 text-red-200 rounded-lg hover:bg-red-200 hover:text-red-950">Register</a>
             @endguest
         </div>
     </div>

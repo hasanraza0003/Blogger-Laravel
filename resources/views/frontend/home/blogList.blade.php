@@ -147,5 +147,4 @@
 
     </div>
 
-    <button class="bg-red-950 text-lg text-red-200 rounded-xl py-4 px-10">Show All</button>
 </div>
