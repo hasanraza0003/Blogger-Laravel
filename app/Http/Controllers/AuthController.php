@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\user;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -25,7 +26,7 @@ class AuthController extends Controller
             'phone' => 'required',
             'gender' => 'required',
             'profile_pic' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-            'dob' => 'required|date_format:d-m-Y',
+            'dob' => 'required',
             'bio' => 'required',
             'hobbies' => 'required|array|min:1',
         ], [
@@ -54,7 +55,7 @@ class AuthController extends Controller
         $user = new User();
         $user->username = $req->username;
         $user->email = $req->email;
-        $user->password = bcrypt($req->password); 
+        $user->password = Hash::make($req->password);
         $user->phone = $req->phone;
         $user->gender = $req->gender;
 
@@ -65,7 +66,7 @@ class AuthController extends Controller
             $user->profile_pic = 'uploads/profile_pics/' . $filename;
         }
 
-        $user->dob = date('Y-m-d', strtotime($req->dob));
+        $user->dob = $req->dob;
 
     
         $user->bio = $req->bio;
@@ -73,7 +74,7 @@ class AuthController extends Controller
         $user->save();
 
         return redirect('login')->with('success', 'Registration successful! Please log in.');
-    }
+    }   
 
  
     public function showLogin()

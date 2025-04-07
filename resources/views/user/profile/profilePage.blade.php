@@ -2,17 +2,7 @@
 
 @section('content')
     @php
-        $user = [
-            'username' => 'john_doe',
-            'email' => 'john@example.com',
-            'password' => bcrypt('password123'),
-            'phone' => '+1-234-567-890',
-            'dob' => '1995-08-15',
-            'gender' => 'male',
-            'hobbies' => ['reading', 'gaming', 'traveling'],
-            'bio' => 'A passionate blogger who loves to share thoughts about tech, travel, and life.',
-            'profile_picture' => 'john_doe.jpg',
-        ];
+        $user =Auth::user();
     @endphp
     <div class="flex flex-col items-center justify-center min-h-screen bg-red-200 text-red-950">
         <h2 class="text-9xl text-center mb-10">Your Profile</h2>

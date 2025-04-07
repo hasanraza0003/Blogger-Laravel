@@ -7,31 +7,52 @@
             <h2 class="text-6xl font-bold text-center mb-6">Blogger</h2>
             <h2 class="text-5xl text-center mb-6">Login</h2>
 
-            <form action="{{route('login')}}" method="POST">
+            {{-- Global Success/Failure Message --}}
+            @if (session('success'))
+                <div class="mb-4 p-3 bg-green-100 text-green-800 rounded-md border border-green-300">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if (session('error'))
+                <div class="mb-4 p-3 bg-red-100 text-red-800 rounded-md border border-red-300">
+                    {{ session('error') }}
+                </div>
+            @endif
+
+            <form action="{{ route('login') }}" method="POST">
                 @csrf
-                <!-- Email -->
+
+                {{-- Email --}}
                 <div class="mb-4">
                     <label for="email" class="block text-md font-semibold mb-2">Email <span class="text-red-600">*</span></label>
                     <input type="email" id="email" name="email"
-                        class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400" required>
+                        value="{{ old('email') }}"
+                        class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400 {{ $errors->has('email') ? 'border-red-500' : '' }}">
+                    @error('email')
+                        <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
 
-                <!-- Password -->
+                {{-- Password --}}
                 <div class="mb-4">
                     <label for="password" class="block text-md font-semibold mb-2">Password <span class="text-red-600">*</span></label>
                     <input type="password" id="password" name="password"
-                        class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400" required>
+                        class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400 {{ $errors->has('password') ? 'border-red-500' : '' }}">
+                    @error('password')
+                        <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
 
-
-                <!-- Submit Button -->
+                {{-- Submit --}}
                 <button type="submit" class="w-full bg-red-950 text-white mt-4 py-2 rounded-md hover:bg-red-900 transition">
                     Login
                 </button>
 
-                <!-- Register Link -->
+                {{-- Link --}}
                 <p class="text-center text-sm mt-4">
-                    Don't have an account? <a href="" class="text-red-950 font-semibold hover:underline">Register</a>
+                    Don't have an account?
+                    <a href="{{ url('register') }}" class="text-red-950 font-semibold hover:underline">Register</a>
                 </p>
             </form>
         </div>
