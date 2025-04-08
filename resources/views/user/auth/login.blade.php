@@ -26,7 +26,7 @@
                 {{-- Email --}}
                 <div class="mb-4">
                     <label for="email" class="block text-md font-semibold mb-2">Email <span class="text-red-600">*</span></label>
-                    <input type="email" id="email" name="email"
+                    <input type="email" id="email" name="email" placeholder="Enter You Email"
                         value="{{ old('email') }}"
                         class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400 {{ $errors->has('email') ? 'border-red-500' : '' }}">
                     @error('email')
@@ -37,7 +37,7 @@
                 {{-- Password --}}
                 <div class="mb-4">
                     <label for="password" class="block text-md font-semibold mb-2">Password <span class="text-red-600">*</span></label>
-                    <input type="password" id="password" name="password"
+                    <input type="password" id="password" name="password" placeholder="Enter You Password"
                         class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400 {{ $errors->has('password') ? 'border-red-500' : '' }}">
                     @error('password')
                         <p class="text-sm text-red-600 mt-1">{{ $message }}</p>

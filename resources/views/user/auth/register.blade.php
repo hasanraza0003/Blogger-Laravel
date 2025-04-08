@@ -15,7 +15,7 @@
                     <!-- Username -->
                     <div class="mb-4">
                         <label for="username" class="block text-sm font-semibold mb-2">Username <span class="text-red-600">*</span></label>
-                        <input type="text" id="username" name="username" value="{{ old('username') }}"
+                        <input type="text" id="username" name="username" value="{{ old('username') }}" placeholder="Enter You Username"
                             class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400">
                         @error('username')
                             <span class="text-red-600 text-sm">{{ $message }}</span>
@@ -25,7 +25,7 @@
                     <!-- Password -->
                     <div class="mb-4">
                         <label for="password" class="block text-sm font-semibold mb-2">Password <span class="text-red-600">*</span></label>
-                        <input type="password" id="password" name="password"
+                        <input type="password" id="password" name="password" placeholder="Enter You Password"
                             class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400">
                         @error('password')
                             <span class="text-red-600 text-sm">{{ $message }}</span>
@@ -35,7 +35,7 @@
                     <!-- Phone -->
                     <div class="mb-4">
                         <label for="phone" class="block text-sm font-semibold mb-2">Phone <span class="text-red-600">*</span></label>
-                        <input type="tel" id="phone" name="phone" value="{{ old('phone') }}"
+                        <input type="tel" id="phone" name="phone" value="{{ old('phone') }}" placeholder="Enter You Phone Number"
                             class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400">
                         @error('phone')
                             <span class="text-red-600 text-sm">{{ $message }}</span>
@@ -55,7 +55,7 @@
                     <!-- Date of Birth -->
                     <div class="mb-4">
                         <label for="dob" class="block text-sm font-semibold mb-2">Date of Birth <span class="text-red-600">*</span></label>
-                        <input type="date" id="dob" name="dob" value="{{ old('dob') }}"
+                        <input type="date" id="dob" name="dob" value="{{ old('dob') }}" 
                             class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400">
                         @error('dob')
                             <span class="text-red-600 text-sm">{{ $message }}</span>
@@ -68,7 +68,7 @@
                     <!-- Email -->
                     <div class="mb-4">
                         <label for="email" class="block text-sm font-semibold mb-2">Email <span class="text-red-600">*</span></label>
-                        <input type="email" id="email" name="email" value="{{ old('email') }}"
+                        <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Enter You Email"
                             class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400">
                         @error('email')
                             <span class="text-red-600 text-sm">{{ $message }}</span>
@@ -78,7 +78,7 @@
                     <!-- Confirm Password -->
                     <div class="mb-4">
                         <label for="password_confirmation" class="block text-sm font-semibold mb-2">Confirm Password <span class="text-red-600">*</span></label>
-                        <input type="password" id="password_confirmation" name="password_confirmation"
+                        <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password"
                             class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400">
                         @error('password_confirmation')
                             <span class="text-red-600 text-sm">{{ $message }}</span>

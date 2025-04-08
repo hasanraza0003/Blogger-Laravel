@@ -14,7 +14,7 @@
             <!-- Title -->
             <div class="mb-4">
                 <label for="title" class="block text-sm font-semibold mb-2">Title <span class="text-red-600">*</span></label>
-                <input type="text" id="title" name="title"
+                <input type="text" id="title" name="title" placeholder="Enter The Blog Title"
                     class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
                     value="{{ old('title') }}">
                 @error('title')
