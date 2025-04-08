@@ -7,8 +7,7 @@
         <div class="flex space-x-6 justify-center items-center">
             <a href="{{ url('/') }}" class="text-xl font-bold text-red-200 hover:text-red-400">Home</a>
             <a href="{{ url('/about') }}" class="text-xl font-bold text-red-200 hover:text-red-400">About</a>
-            <a href="{{ url('/add/blog') }}"
-                class="text-xl font-medium px-4 py-2 bg-red-200 text-red-950 rounded-lg hover:text-red-400">Create
+            <a href="{{route('blog.create')}}" class="text-xl font-medium px-4 py-2 bg-red-200 text-red-950 rounded-lg hover:text-red-400">Create
                 Blog</a>
         </div>
 

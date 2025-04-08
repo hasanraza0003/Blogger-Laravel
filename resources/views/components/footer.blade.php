@@ -6,10 +6,11 @@
                 <div class="w-full">
                     <ul class="mt-4 space-y-2 flex justify-between items-center">
                         <h3 class="text-4xl font-semibold text-red-200">Categories</h3>
-                        <li><a href="" class="text-2xl text-red-200 hover:text-red-400">Technology</a></li>
+                        <li><a href="" class="text-2xl text-red-200 hover:text-red-400">Tech</a></li>
                         <li><a href="" class="text-2xl text-red-200 hover:text-red-400">Lifestyle</a></li>
                         <li><a href="" class="text-2xl text-red-200 hover:text-red-400">Travel</a></li>
                         <li><a href="" class="text-2xl text-red-200 hover:text-red-400">Food</a></li>
+                        <li><a href="" class="text-2xl text-red-200 hover:text-red-400">Education</a></li>
                     </ul>
                 </div>
                 <div class="w-full border-t border-red-200 mt-5">

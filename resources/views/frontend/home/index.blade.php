@@ -2,5 +2,6 @@
 
 @section('indexpage')
     @include('frontend.home.heroSec')
+    
     @include('frontend.home.blogList')
 @endsection
